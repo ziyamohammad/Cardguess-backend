@@ -4,15 +4,15 @@ import leader from "../model/leader.models.js";
 import Apiresponse from "../utils/Apiresponse.js";
 
 const leaderboard = asynchandler(async (req, res) => {
-  const { moves } = req.body;
+  const { moves , username} = req.body;
 
   // Validate
-  if (moves === undefined || typeof moves !== "number") {
+  if (moves === undefined || typeof moves !== "number" || !username) {
     throw new Apierror(400, "moves must be a number and is required");
   }
 
   try {
-    const leaderboardEntry = await leader.create({ moves });
+    const leaderboardEntry = await leader.create({ moves , username });
 
     return res
       .status(201)
