@@ -11,8 +11,14 @@ const leaderboard = asynchandler(async (req, res) => {
     throw new Apierror(400, "moves must be a number and is required");
   }
 
+  
+
   try {
-    const leaderboardEntry = await leader.create({ moves , username });
+    const leaderboardEntry = await leader.findOneAndUpdate(
+      { username },
+      { moves, updatedAt: new Date() },
+      { new: true, upsert: true } // upsert = update if exists, insert if not
+    );
 
     return res
       .status(201)

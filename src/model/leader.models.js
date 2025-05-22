@@ -5,7 +5,7 @@ const leaderSchema = mongoose.Schema({
         type:Number,
         required:true,
     },
-    usename:{
+    username:{
         type:String,
         required:true,
         lowercase:true
