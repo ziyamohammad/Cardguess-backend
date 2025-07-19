@@ -140,12 +140,3 @@ Feel free to fork, suggest improvements, or open PRs! 🚀
 
 ```
 
----
-
-Let me know if:
-- You want a **Postman collection** for API testing.
-- You need help setting up **leaderboard sorting** (by time or moves).
-- You want to deploy this backend on **Render** or **Railway** for free hosting.
-
-You're doing great by separating backend logic into its own repo. Now let's make every repo **shine like a startup-level product**.
-```
